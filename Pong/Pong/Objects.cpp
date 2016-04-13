@@ -29,7 +29,10 @@ public:
     int Width, Height;
     
     Paddle() {
-        
+        X = 0;
+        Y = 0;
+        Width = 0;
+        Height = 0;
     }
     
     Paddle(int x, int y, int w, int h) {
@@ -58,7 +61,11 @@ public:
      int speed, direction;
     
     Ball() {
-        
+        centerX = 0;
+        centerY = 0;
+        radius = 0;
+        speed = 0;
+        direction = 0;
     }
         
      Ball(int x, int y, int r) {

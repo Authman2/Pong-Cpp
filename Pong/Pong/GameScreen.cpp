@@ -34,41 +34,61 @@ public:
     
     PongGame() {
         paddle1 = Paddle(10,20,20,50);
-        paddle2 = Paddle(80,20,20,50);
+        paddle2 = Paddle(750,20,20,50);
         ball = Ball(30,30,10);
     }
-    PongGame(Event e) {
-        paddle1 = Paddle(10,20,20,50);
-        paddle2 = Paddle(80,20,20,50);
-        ball = Ball(30,30,10);
+    
+    
+    void AddEventHandler(Event e) {
         event = e;
     }
     
-    
-    
-    void initialize() {
-        
-        
+    //Move the ball in random directions
+    void ballMovement() {
         
     }
     
+    
     void update() {
+        
+        //Move the ball
+        ballMovement();
         
         //Player 1
         if(event.type == Event::KeyPressed && event.key.code == Keyboard::Up) {
             cout << "Moving up\n";
+            
+            //Move up
+            if(paddle1.Y > 0) {
+                paddle1.Y--;
+            }
         }
         if(event.type == Event::KeyPressed && event.key.code == Keyboard::Down) {
             cout << "Moving down\n";
+            
+            //Move down
+            if(paddle1.Y < 600) {
+                paddle1.Y++;
+            }
         }
         
         
         //Player 2
         if(event.type == Event::KeyPressed && event.key.code == Keyboard::W) {
             cout << "Moving up\n";
+            
+            //Move up
+            if(paddle2.Y > 0) {
+                paddle2.Y--;
+            }
         }
         if(event.type == Event::KeyPressed && event.key.code == Keyboard::S) {
             cout << "Moving down\n";
+            
+            //Move up
+            if(paddle2.Y > 0) {
+                paddle2.Y--;
+            }
         }
     }
     
@@ -85,7 +105,9 @@ public:
             return EXIT_FAILURE;
         }
         
-        Sprite paddleSpr(pad1);
+        Sprite paddle1Spr(pad1);
+        Sprite paddle2Spr(pad2);
+        Sprite ballSpr(ball);
     }
 
     

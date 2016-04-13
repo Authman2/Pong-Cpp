@@ -35,27 +35,27 @@ int main(int, char const**)
     
     //Create the game object
     PongGame game = PongGame();
+    
+    //Draw the first frame of the game
     game.draw();
    
     
     // Start the game loop
     while (window.isOpen())  {
         
-        // Process events
+        // Main Event Handler
         Event event;
         while (window.pollEvent(event)) {
-            
             // Close window: exit
             if (event.type == Event::Closed) {
                 window.close();
             }
-
-            
         }
         
-        //Add the event handler to the game, then update it.
-        game = PongGame(event);
+        //Add the event handler to the game, then update and draw it.
+        game.AddEventHandler(event);
         game.update();
+        game.draw();
         
 
         // Clear screen
