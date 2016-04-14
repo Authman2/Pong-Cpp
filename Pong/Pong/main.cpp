@@ -26,19 +26,19 @@ using namespace sf;
 using namespace std;
 
 
+RenderWindow window;
+
+
 int main(int, char const**)
 {
     // Create the main window
-    RenderWindow window( VideoMode(800, 600), "Pong");
+    window.create(VideoMode(800, 600), "Pong");
 
     
     
     //Create the game object
-    PongGame game = PongGame();
+    PongGame game;
     
-    //Draw the first frame of the game
-    game.draw();
-   
     
     // Start the game loop
     while (window.isOpen())  {
@@ -55,11 +55,12 @@ int main(int, char const**)
         //Add the event handler to the game, then update and draw it.
         game.AddEventHandler(event);
         game.update();
-        game.draw();
-        
 
+        
         // Clear screen
         window.clear();
+        
+        game.draw();
 
         // Update the window
         window.display();

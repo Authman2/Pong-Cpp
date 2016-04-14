@@ -9,7 +9,9 @@
 #include <stdio.h>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include "ResourcePath.hpp"
 #include "Objects.cpp"
+#include "main.cpp"
 
 #import <iostream>
 #import <fstream>
@@ -27,15 +29,39 @@ class PongGame {
 private:
     Event event;
     
-    
 public:
+    //Game objects
     Paddle paddle1, paddle2;
     Ball ball;
     
+    //Sprites
+    Sprite paddle1Spr;
+    Sprite paddle2Spr;
+    Sprite ballSpr;
+    
+    //List of objects
+    vector<Sprite> gameobj = vector<Sprite>();
+    
+    
     PongGame() {
-        paddle1 = Paddle(10,20,20,50);
-        paddle2 = Paddle(750,20,20,50);
-        ball = Ball(30,30,10);
+        paddle1.X = 10;
+        paddle1.Y = 20;
+        paddle1.Width = 20;
+        paddle1.Height = 50;
+        
+        paddle2.X = 750;
+        paddle2.Y = 20;
+        paddle2.Width = 20;
+        paddle2.Height = 50;
+        
+        ball.centerX = 30;
+        ball.centerY = 30;
+        ball.radius = 10;
+        
+        gameobj.push_back(paddle1Spr);
+        gameobj.push_back(paddle2Spr);
+        gameobj.push_back(ballSpr);
+
     }
     
     
@@ -48,6 +74,9 @@ public:
         
     }
     
+    void initalize() {
+        
+    }
     
     void update() {
         
@@ -93,21 +122,23 @@ public:
     }
     
     void draw() {
-        Texture pad1, pad2, ball;
+        Texture pad1, pad2, ballt;
         
-        if(!pad1.loadFromFile("WhitePixel.png")) {
-            return EXIT_FAILURE;
-        }
-        if(!pad2.loadFromFile("WhitePixel.png")) {
-            return EXIT_FAILURE;
-        }
-        if(!ball.loadFromFile("WhitePixel.png")) {
-            return EXIT_FAILURE;
-        }
+        if(!pad1.loadFromFile(resourcePath() + "WhitePixel.png")) { return EXIT_FAILURE; }
+        if(!pad2.loadFromFile(resourcePath() + "WhitePixel.png")) { return EXIT_FAILURE; }
+        if(!ballt.loadFromFile(resourcePath() + "WhitePixel.png")) { return EXIT_FAILURE; }
         
-        Sprite paddle1Spr(pad1);
-        Sprite paddle2Spr(pad2);
-        Sprite ballSpr(ball);
+        //Set the textures for each sprite
+        paddle1Spr.setTexture(pad1);
+        paddle2Spr.setTexture(pad2);
+        ballSpr.setTexture(ballt);
+        
+        //Set the rectangle area
+        paddle1Spr.setTextureRect(IntRect(paddle1.X, paddle1.Y, paddle1.Width, paddle1.Height));
+        paddle2Spr.setTextureRect(IntRect(paddle2.X, paddle2.Y, paddle2.Width, paddle2.Height));
+        ballSpr.setTextureRect(IntRect(ball.centerX, ball.centerY, ball.radius, ball.radius));
+        
+        window.draw(paddle1Spr);
     }
 
     

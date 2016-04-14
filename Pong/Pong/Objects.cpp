@@ -10,16 +10,23 @@
 #include <cmath>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include "main.cpp"
 
 #import <iostream>
 #import <fstream>
+
+class Entity {
+
+    
+};
+
 
 /*
  
  The Paddle
  
  */
-class Paddle {
+class Paddle : public Entity {
     
 public:
     //Positions on screen
@@ -45,16 +52,12 @@ public:
 };
 
 
-
-
-
-
 /*
  
  The Ball
  
  */
-class Ball {
+class Ball : public Entity {
     
 public:
      int centerX, centerY, radius;
