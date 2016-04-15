@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1065BC1B1CBDEC3200185AA9 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1065BC1A1CBDEC3200185AA9 /* ResourcePath.mm */; };
-		1065BC1E1CBDEC3200185AA9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1065BC1D1CBDEC3200185AA9 /* main.cpp */; };
-		1065BC211CBDEC3200185AA9 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1065BC201CBDEC3200185AA9 /* cute_image.jpg */; };
-		1065BC231CBDEC3200185AA9 /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 1065BC221CBDEC3200185AA9 /* nice_music.ogg */; };
-		1065BC251CBDEC3300185AA9 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1065BC241CBDEC3300185AA9 /* sansation.ttf */; };
-		1065BC271CBDEC3300185AA9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1065BC261CBDEC3300185AA9 /* icon.png */; };
-		1065BC2E1CBDEDA600185AA9 /* WhitePixel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1065BC2D1CBDEDA600185AA9 /* WhitePixel.png */; };
-		1065BC301CBDEDD500185AA9 /* GameScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1065BC2F1CBDEDD500185AA9 /* GameScreen.cpp */; };
-		1065BC321CBDEF6E00185AA9 /* Objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1065BC311CBDEF6E00185AA9 /* Objects.cpp */; };
+		10DDB5B41CC077F900543864 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 10DDB5B31CC077F900543864 /* ResourcePath.mm */; };
+		10DDB5B71CC077F900543864 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DDB5B61CC077F900543864 /* main.cpp */; };
+		10DDB5BA1CC077F900543864 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10DDB5B91CC077F900543864 /* cute_image.jpg */; };
+		10DDB5BC1CC077F900543864 /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 10DDB5BB1CC077F900543864 /* nice_music.ogg */; };
+		10DDB5BE1CC077FA00543864 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10DDB5BD1CC077FA00543864 /* sansation.ttf */; };
+		10DDB5C01CC077FA00543864 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DDB5BF1CC077FA00543864 /* icon.png */; };
+		10DDB5C71CC0780D00543864 /* WhitePixel.png in Resources */ = {isa = PBXBuildFile; fileRef = 10DDB5C61CC0780D00543864 /* WhitePixel.png */; };
+		10DDB5C91CC0783A00543864 /* Objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DDB5C81CC0783A00543864 /* Objects.cpp */; };
+		10DDB5CB1CC0789500543864 /* GameScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DDB5CA1CC0789500543864 /* GameScreen.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1065BC151CBDEC3200185AA9 /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1065BC191CBDEC3200185AA9 /* Pong-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pong-Info.plist"; sourceTree = "<group>"; };
-		1065BC1A1CBDEC3200185AA9 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
-		1065BC1C1CBDEC3200185AA9 /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
-		1065BC1D1CBDEC3200185AA9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		1065BC201CBDEC3200185AA9 /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		1065BC221CBDEC3200185AA9 /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
-		1065BC241CBDEC3300185AA9 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
-		1065BC261CBDEC3300185AA9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		1065BC2D1CBDEDA600185AA9 /* WhitePixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhitePixel.png; sourceTree = "<group>"; };
-		1065BC2F1CBDEDD500185AA9 /* GameScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScreen.cpp; sourceTree = "<group>"; };
-		1065BC311CBDEF6E00185AA9 /* Objects.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Objects.cpp; sourceTree = "<group>"; };
+		10DDB5AE1CC077F900543864 /* MYPONGGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYPONGGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10DDB5B21CC077F900543864 /* MYPONGGAME-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MYPONGGAME-Info.plist"; sourceTree = "<group>"; };
+		10DDB5B31CC077F900543864 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
+		10DDB5B51CC077F900543864 /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
+		10DDB5B61CC077F900543864 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		10DDB5B91CC077F900543864 /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
+		10DDB5BB1CC077F900543864 /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
+		10DDB5BD1CC077FA00543864 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
+		10DDB5BF1CC077FA00543864 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		10DDB5C61CC0780D00543864 /* WhitePixel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhitePixel.png; sourceTree = "<group>"; };
+		10DDB5C81CC0783A00543864 /* Objects.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Objects.cpp; sourceTree = "<group>"; };
+		10DDB5CA1CC0789500543864 /* GameScreen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScreen.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1065BC111CBDEC3200185AA9 /* Frameworks */ = {
+		10DDB5AA1CC077F900543864 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,52 +44,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1065BC0B1CBDEC3200185AA9 = {
+		10DDB5A41CC077F900543864 = {
 			isa = PBXGroup;
 			children = (
-				1065BC171CBDEC3200185AA9 /* Pong */,
-				1065BC161CBDEC3200185AA9 /* Products */,
+				10DDB5B01CC077F900543864 /* MYPONGGAME */,
+				10DDB5AF1CC077F900543864 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1065BC161CBDEC3200185AA9 /* Products */ = {
+		10DDB5AF1CC077F900543864 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1065BC151CBDEC3200185AA9 /* Pong.app */,
+				10DDB5AE1CC077F900543864 /* MYPONGGAME.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1065BC171CBDEC3200185AA9 /* Pong */ = {
+		10DDB5B01CC077F900543864 /* MYPONGGAME */ = {
 			isa = PBXGroup;
 			children = (
-				1065BC1A1CBDEC3200185AA9 /* ResourcePath.mm */,
-				1065BC1C1CBDEC3200185AA9 /* ResourcePath.hpp */,
-				1065BC1D1CBDEC3200185AA9 /* main.cpp */,
-				1065BC2F1CBDEDD500185AA9 /* GameScreen.cpp */,
-				1065BC311CBDEF6E00185AA9 /* Objects.cpp */,
-				1065BC1F1CBDEC3200185AA9 /* Resources */,
-				1065BC181CBDEC3200185AA9 /* Supporting Files */,
+				10DDB5B31CC077F900543864 /* ResourcePath.mm */,
+				10DDB5B51CC077F900543864 /* ResourcePath.hpp */,
+				10DDB5B61CC077F900543864 /* main.cpp */,
+				10DDB5CA1CC0789500543864 /* GameScreen.cpp */,
+				10DDB5C81CC0783A00543864 /* Objects.cpp */,
+				10DDB5B81CC077F900543864 /* Resources */,
+				10DDB5B11CC077F900543864 /* Supporting Files */,
 			);
-			path = Pong;
+			path = MYPONGGAME;
 			sourceTree = "<group>";
 		};
-		1065BC181CBDEC3200185AA9 /* Supporting Files */ = {
+		10DDB5B11CC077F900543864 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1065BC191CBDEC3200185AA9 /* Pong-Info.plist */,
+				10DDB5B21CC077F900543864 /* MYPONGGAME-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1065BC1F1CBDEC3200185AA9 /* Resources */ = {
+		10DDB5B81CC077F900543864 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1065BC2D1CBDEDA600185AA9 /* WhitePixel.png */,
-				1065BC201CBDEC3200185AA9 /* cute_image.jpg */,
-				1065BC221CBDEC3200185AA9 /* nice_music.ogg */,
-				1065BC241CBDEC3300185AA9 /* sansation.ttf */,
-				1065BC261CBDEC3300185AA9 /* icon.png */,
+				10DDB5C61CC0780D00543864 /* WhitePixel.png */,
+				10DDB5B91CC077F900543864 /* cute_image.jpg */,
+				10DDB5BB1CC077F900543864 /* nice_music.ogg */,
+				10DDB5BD1CC077FA00543864 /* sansation.ttf */,
+				10DDB5BF1CC077FA00543864 /* icon.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -97,72 +97,72 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1065BC141CBDEC3200185AA9 /* Pong */ = {
+		10DDB5AD1CC077F900543864 /* MYPONGGAME */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1065BC2A1CBDEC3300185AA9 /* Build configuration list for PBXNativeTarget "Pong" */;
+			buildConfigurationList = 10DDB5C31CC077FA00543864 /* Build configuration list for PBXNativeTarget "MYPONGGAME" */;
 			buildPhases = (
-				1065BC101CBDEC3200185AA9 /* Sources */,
-				1065BC111CBDEC3200185AA9 /* Frameworks */,
-				1065BC121CBDEC3200185AA9 /* Resources */,
-				1065BC131CBDEC3200185AA9 /* ShellScript */,
+				10DDB5A91CC077F900543864 /* Sources */,
+				10DDB5AA1CC077F900543864 /* Frameworks */,
+				10DDB5AB1CC077F900543864 /* Resources */,
+				10DDB5AC1CC077F900543864 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Pong;
-			productName = Pong;
-			productReference = 1065BC151CBDEC3200185AA9 /* Pong.app */;
+			name = MYPONGGAME;
+			productName = MYPONGGAME;
+			productReference = 10DDB5AE1CC077F900543864 /* MYPONGGAME.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1065BC0C1CBDEC3200185AA9 /* Project object */ = {
+		10DDB5A51CC077F900543864 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Adeola Uthman";
 				TargetAttributes = {
-					1065BC141CBDEC3200185AA9 = {
+					10DDB5AD1CC077F900543864 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
-			buildConfigurationList = 1065BC0F1CBDEC3200185AA9 /* Build configuration list for PBXProject "Pong" */;
+			buildConfigurationList = 10DDB5A81CC077F900543864 /* Build configuration list for PBXProject "MYPONGGAME" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1065BC0B1CBDEC3200185AA9;
-			productRefGroup = 1065BC161CBDEC3200185AA9 /* Products */;
+			mainGroup = 10DDB5A41CC077F900543864;
+			productRefGroup = 10DDB5AF1CC077F900543864 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1065BC141CBDEC3200185AA9 /* Pong */,
+				10DDB5AD1CC077F900543864 /* MYPONGGAME */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1065BC121CBDEC3200185AA9 /* Resources */ = {
+		10DDB5AB1CC077F900543864 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1065BC271CBDEC3300185AA9 /* icon.png in Resources */,
-				1065BC251CBDEC3300185AA9 /* sansation.ttf in Resources */,
-				1065BC231CBDEC3200185AA9 /* nice_music.ogg in Resources */,
-				1065BC2E1CBDEDA600185AA9 /* WhitePixel.png in Resources */,
-				1065BC211CBDEC3200185AA9 /* cute_image.jpg in Resources */,
+				10DDB5C01CC077FA00543864 /* icon.png in Resources */,
+				10DDB5BE1CC077FA00543864 /* sansation.ttf in Resources */,
+				10DDB5BC1CC077F900543864 /* nice_music.ogg in Resources */,
+				10DDB5C71CC0780D00543864 /* WhitePixel.png in Resources */,
+				10DDB5BA1CC077F900543864 /* cute_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1065BC131CBDEC3200185AA9 /* ShellScript */ = {
+		10DDB5AC1CC077F900543864 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -178,21 +178,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1065BC101CBDEC3200185AA9 /* Sources */ = {
+		10DDB5A91CC077F900543864 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1065BC1E1CBDEC3200185AA9 /* main.cpp in Sources */,
-				1065BC301CBDEDD500185AA9 /* GameScreen.cpp in Sources */,
-				1065BC321CBDEF6E00185AA9 /* Objects.cpp in Sources */,
-				1065BC1B1CBDEC3200185AA9 /* ResourcePath.mm in Sources */,
+				10DDB5C91CC0783A00543864 /* Objects.cpp in Sources */,
+				10DDB5CB1CC0789500543864 /* GameScreen.cpp in Sources */,
+				10DDB5B71CC077F900543864 /* main.cpp in Sources */,
+				10DDB5B41CC077F900543864 /* ResourcePath.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1065BC281CBDEC3300185AA9 /* Debug */ = {
+		10DDB5C11CC077FA00543864 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -239,7 +239,7 @@
 			};
 			name = Debug;
 		};
-		1065BC291CBDEC3300185AA9 /* Release */ = {
+		10DDB5C21CC077FA00543864 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
@@ -286,19 +286,19 @@
 			};
 			name = Release;
 		};
-		1065BC2B1CBDEC3300185AA9 /* Debug */ = {
+		10DDB5C41CC077FA00543864 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "Pong/Pong-Info.plist";
+				INFOPLIST_FILE = "MYPONGGAME/MYPONGGAME-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		1065BC2C1CBDEC3300185AA9 /* Release */ = {
+		10DDB5C51CC077FA00543864 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = "Pong/Pong-Info.plist";
+				INFOPLIST_FILE = "MYPONGGAME/MYPONGGAME-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -307,25 +307,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1065BC0F1CBDEC3200185AA9 /* Build configuration list for PBXProject "Pong" */ = {
+		10DDB5A81CC077F900543864 /* Build configuration list for PBXProject "MYPONGGAME" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1065BC281CBDEC3300185AA9 /* Debug */,
-				1065BC291CBDEC3300185AA9 /* Release */,
+				10DDB5C11CC077FA00543864 /* Debug */,
+				10DDB5C21CC077FA00543864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1065BC2A1CBDEC3300185AA9 /* Build configuration list for PBXNativeTarget "Pong" */ = {
+		10DDB5C31CC077FA00543864 /* Build configuration list for PBXNativeTarget "MYPONGGAME" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1065BC2B1CBDEC3300185AA9 /* Debug */,
-				1065BC2C1CBDEC3300185AA9 /* Release */,
+				10DDB5C41CC077FA00543864 /* Debug */,
+				10DDB5C51CC077FA00543864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1065BC0C1CBDEC3200185AA9 /* Project object */;
+	rootObject = 10DDB5A51CC077F900543864 /* Project object */;
 }

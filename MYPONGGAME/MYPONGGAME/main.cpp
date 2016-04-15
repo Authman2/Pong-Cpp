@@ -14,36 +14,32 @@
 // method resourcePath() from ResourcePath.hpp
 //
 
-#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
-#include "GameScreen.cpp"
-
-// Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
-
+#include "GameScreen.cpp"
+#include <iostream>
 
 using namespace sf;
 using namespace std;
 
 
-RenderWindow window;
-
-
 int main(int, char const**)
 {
     // Create the main window
+    RenderWindow window;
     window.create(VideoMode(800, 600), "Pong");
 
     
     
-    //Create the game object
-    PongGame game;
+    //Create and initialize the actual game screen
+    GameScreen gamescreen = GameScreen();
+    gamescreen.initialize();
     
     
     // Start the game loop
-    while (window.isOpen())  {
+    while (window.isOpen()) {
         
-        // Main Event Handler
+        // Process events
         Event event;
         while (window.pollEvent(event)) {
             // Close window: exit
@@ -52,16 +48,29 @@ int main(int, char const**)
             }
         }
         
-        //Add the event handler to the game, then update and draw it.
-        game.AddEventHandler(event);
-        game.update();
-
+        //Add the event handler
+        gamescreen.addEventHandler(event);
         
+
         // Clear screen
         window.clear();
-        
-        game.draw();
 
+        
+        
+        /*
+         
+         Here I am trying to use that standard game loop with initialize, update, and draw. If I ever try to make a real game in C++ I know that I will need to know how to use these methods and create objects outside of this class.
+         
+         */
+        gamescreen.update();        
+        
+        //Draw each entity (sprite)
+        for(Sprite ent : gamescreen.entities) {
+            window.draw(ent);
+        }
+        
+        
+        
         // Update the window
         window.display();
     }

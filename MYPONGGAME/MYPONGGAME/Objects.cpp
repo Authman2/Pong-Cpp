@@ -1,22 +1,24 @@
 //
 //  Objects.cpp
-//  Pong
+//  MYPONGGAME
 //
-//  Created by Adeola Uthman on 4/12/16.
+//  Created by Adeola Uthman on 4/14/16.
 //  Copyright © 2016 Adeola Uthman. All rights reserved.
 //
 
 #include <stdio.h>
-#include <cmath>
-#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
-#include "main.cpp"
+#include "ResourcePath.hpp"
+#include <cmath>
 
-#import <iostream>
-#import <fstream>
+
+
+using namespace sf;
+using namespace std;
+
 
 class Entity {
-
+    
     
 };
 
@@ -35,6 +37,7 @@ public:
     //Width and Height
     int Width, Height;
     
+    
     Paddle() {
         X = 0;
         Y = 0;
@@ -43,10 +46,10 @@ public:
     }
     
     Paddle(int x, int y, int w, int h) {
-        X = x;
-        Y = y;
-        Width = w;
-        Height = h;
+        this->X = x;
+        this->Y = y;
+        this->Width = w;
+        this->Height = h;
     }
     
 };
@@ -60,8 +63,8 @@ public:
 class Ball : public Entity {
     
 public:
-     int centerX, centerY, radius;
-     int speed, direction;
+    float centerX, centerY, radius;
+    int speed, direction;
     
     Ball() {
         centerX = 0;
@@ -70,49 +73,49 @@ public:
         speed = 0;
         direction = 0;
     }
-        
-     Ball(int x, int y, int r) {
+    
+    Ball(int x, int y, int r) {
         centerX = x;
         centerY = y;
         radius = r;
-     }
+    }
     
-     int getX() {
+    int getX() {
         return centerX;
-     }
-     int getY() {
+    }
+    int getY() {
         return centerY;
-     }
-     int getRadius() {
+    }
+    int getRadius() {
         return radius;
-     }
+    }
     
-     bool containsPoint(int x, int y) {
+    bool containsPoint(int x, int y) {
         int xSquared = (x - centerX) * (x - centerX);
         int ySquared = (y - centerY) * (y - centerY);
         int radiusSquared = radius * radius;
         return xSquared + ySquared - radiusSquared <= 0;
-     }
+    }
     
-     void setPosition(int x, int y){
+    void setPosition(int x, int y){
         centerX = x;
         centerY = y;
-     }
+    }
     
-     void setSpeed(int s) {
+    void setSpeed(int s) {
         speed = s;
     }
     
-     void move(int xAmount, int yAmount) {
+    void move(int xAmount, int yAmount) {
         centerX = centerX + xAmount;
         centerY = centerY + yAmount;
     }
     
-     void move() {
+    void move() {
         move((int)(speed * cos(direction)), (int)(speed * sin(direction)));
     }
     
-     void setDirection(int degrees) {
+    void setDirection(int degrees) {
         direction = degrees % 360;
     }
     
@@ -124,5 +127,3 @@ public:
         return direction;
     }
 };
-
-

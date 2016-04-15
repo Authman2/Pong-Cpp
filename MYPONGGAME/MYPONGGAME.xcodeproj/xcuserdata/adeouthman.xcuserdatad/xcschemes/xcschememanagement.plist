@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pong.xcscheme</key>
+		<key>MYPONGGAME.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1065BC141CBDEC3200185AA9</key>
+		<key>10DDB5AD1CC077F900543864</key>
 		<dict>
 			<key>primary</key>
 			<true/>
