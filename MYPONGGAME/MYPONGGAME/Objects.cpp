@@ -10,6 +10,7 @@
 #include <SFML/Graphics.hpp>
 #include "ResourcePath.hpp"
 #include <cmath>
+#include "Point.cpp"
 
 
 
@@ -19,38 +20,6 @@ using namespace std;
 
 class Entity {
     
-    
-};
-
-
-/*
- 
- The Paddle
- 
- */
-class Paddle : public Entity {
-    
-public:
-    //Positions on screen
-    int X, Y;
-    
-    //Width and Height
-    int Width, Height;
-    
-    
-    Paddle() {
-        X = 0;
-        Y = 0;
-        Width = 0;
-        Height = 0;
-    }
-    
-    Paddle(int x, int y, int w, int h) {
-        this->X = x;
-        this->Y = y;
-        this->Width = w;
-        this->Height = h;
-    }
     
 };
 
@@ -126,4 +95,153 @@ public:
     int getDirection() {
         return direction;
     }
+};
+
+/*
+ 
+ The Paddle
+ 
+ */
+class Paddle : public Entity {
+public:
+     Point origin;
+     int width, height;
+     Color color;
+    
+    int speed, direction;
+    
+    
+    //CONSTRUCTOR
+    Paddle() {
+        
+    }
+     Paddle(int oX, int oY, int w, int h, Color c) {
+        origin = Point(oX, oY);
+        width = w;
+        height = h;
+        color = c;
+    }
+    
+    //GET THE VERTICIES OF THE RECTANGLE
+     Point getOrigin() { return origin; }
+     Point getTopRight() {
+        Point P =  Point(origin.getX() + width, origin.getY());
+        return P;
+    }
+     Point getBottomRight() {
+        Point P =  Point(origin.getX() + width, origin.getY() + height);
+        return P;
+    }
+     Point getBottomLeft() {
+        Point P =  Point(origin.getX(), origin.getY() + height);
+        return P;
+    }
+    
+    //GET THE WIDTH AND HEIGHT
+     int Width() {
+        return width;
+    }
+     int Height() {
+        return height;
+    }
+    
+     void setColor(Color cx) {
+        color = cx;
+    }
+    
+     void setPosition(Point p) {
+        origin = p;
+    }
+    
+    //CHECKS IF THE POINT LIES IN THE RECTANGLE
+     bool containsPoint(int x, int y) {
+        bool cont;
+        if(x > origin.getX() && x < (origin.getX() + width)) {
+            if(y > origin.getY() && y < (origin.getY() + height)) {
+                cont = true;
+            } else {
+                cont = false;
+            }
+        } else {
+            cont = false;
+        }
+        
+        return cont;
+    }
+    
+    //MOVE THE RECTANGLE
+     void move(int xAmount, int yAmount) {
+        origin.setX(origin.getX() + xAmount);
+        origin.setY(origin.getY() + yAmount);
+    }
+    
+    //CHECK IF ANOTHER RECTANGLE INTERSECTS THIS ONE
+     bool intersects(Paddle r) {
+        bool inOrigin = false;
+        bool inTopRight = false;
+        bool inBottomRight = false;
+        bool inBottomLeft = false;
+        bool inOverall = false;
+        
+        if(this->containsPoint((int)r.getOrigin().getX(), (int)r.getOrigin().getY())) {
+            inOrigin = true;
+        }
+        if(this->containsPoint((int)r.getTopRight().getX(), (int)r.getTopRight().getY())) {
+            inTopRight = true;
+        }
+        if(this->containsPoint((int)r.getBottomRight().getX(), (int)r.getBottomRight().getY())) {
+            inBottomRight = true;
+        }
+        if(this->containsPoint((int)r.getBottomLeft().getX(), (int)r.getBottomLeft().getY())) {
+            inBottomLeft = true;
+        }
+        
+        if(inOrigin || inTopRight || inBottomRight || inBottomLeft) {
+            inOverall = true;
+        } else if (!inOrigin && !inTopRight && !inBottomRight && !inBottomLeft) {
+            inOverall = false;
+        }
+        
+        return inOverall;
+    }
+    
+     bool hits(Ball b) {
+        bool hits = false;
+        
+        if(b.getX() >= this->getOrigin().getX() && b.getX() <= this->getTopRight().getX()) {
+            if(b.getY() >= this->getOrigin().getY() && b.getY() <= this->getBottomRight().getY()) {
+                hits = true;
+            } else {
+                hits = false;
+            }
+        } else {
+            hits = false;
+        }
+        
+        return hits;
+    }
+    
+    
+     void setSpeed(int s) {
+        speed = s;
+    }
+    
+     void move() {
+        move((int)(speed * cos(direction)), (int)(speed * sin(direction)));
+    }
+    
+     void setDirection(int degrees) {
+        direction = degrees % 360;
+    }
+    
+     void turn(int degrees) {
+        direction = (direction + degrees) % 360;
+    }
+    
+     int getDirection() {
+        return direction;
+    }
+    
+    
+    
 };

@@ -40,16 +40,14 @@ int main(int, char const**)
     while (window.isOpen()) {
         
         // Process events
-        Event event;
-        while (window.pollEvent(event)) {
+        Event p1;
+        while (window.pollEvent(p1)) {
             // Close window: exit
-            if (event.type == Event::Closed) {
+            if (p1.type == Event::Closed) {
                 window.close();
             }
+            
         }
-        
-        //Add the event handler
-        gamescreen.addEventHandler(event);
         
 
         // Clear screen

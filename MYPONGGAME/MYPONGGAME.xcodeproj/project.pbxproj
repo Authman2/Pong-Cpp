@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10B3FAF01CC1D4DF0019ADDC /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10B3FAEF1CC1D4DF0019ADDC /* Point.cpp */; };
 		10DDB5B41CC077F900543864 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 10DDB5B31CC077F900543864 /* ResourcePath.mm */; };
 		10DDB5B71CC077F900543864 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10DDB5B61CC077F900543864 /* main.cpp */; };
 		10DDB5BA1CC077F900543864 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 10DDB5B91CC077F900543864 /* cute_image.jpg */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10B3FAEF1CC1D4DF0019ADDC /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
 		10DDB5AE1CC077F900543864 /* MYPONGGAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYPONGGAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10DDB5B21CC077F900543864 /* MYPONGGAME-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MYPONGGAME-Info.plist"; sourceTree = "<group>"; };
 		10DDB5B31CC077F900543864 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				10DDB5B61CC077F900543864 /* main.cpp */,
 				10DDB5CA1CC0789500543864 /* GameScreen.cpp */,
 				10DDB5C81CC0783A00543864 /* Objects.cpp */,
+				10B3FAEF1CC1D4DF0019ADDC /* Point.cpp */,
 				10DDB5B81CC077F900543864 /* Resources */,
 				10DDB5B11CC077F900543864 /* Supporting Files */,
 			);
@@ -184,6 +187,7 @@
 			files = (
 				10DDB5C91CC0783A00543864 /* Objects.cpp in Sources */,
 				10DDB5CB1CC0789500543864 /* GameScreen.cpp in Sources */,
+				10B3FAF01CC1D4DF0019ADDC /* Point.cpp in Sources */,
 				10DDB5B71CC077F900543864 /* main.cpp in Sources */,
 				10DDB5B41CC077F900543864 /* ResourcePath.mm in Sources */,
 			);
@@ -323,6 +327,7 @@
 				10DDB5C51CC077FA00543864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

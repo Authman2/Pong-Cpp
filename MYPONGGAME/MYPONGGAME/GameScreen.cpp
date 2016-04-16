@@ -20,42 +20,76 @@ using namespace std;
 class GameScreen {
     
 private:
-    Event event;
+    
+    /* Used in a similar fashion to the way you would use it in java. */
+    void repaint() {
+        //Remove whatever is already there
+        entities.erase(entities.begin(), entities.end());
+        
+        //Add all of the sprites to the entities list
+        entities.push_back(paddle1Spr);
+        entities.push_back(paddle2Spr);
+        entities.push_back(ballSpr);
+    }
     
     void KeyInput() {
+            
         /* PLAYER 2 */
         //Up arrow key
-        if(event.type == Event::KeyPressed && event.key.code == Keyboard::Up) {
-            if(paddle2.Y > 0) {
-                paddle2.Y--;
+        if(Keyboard::isKeyPressed(Keyboard::Key::Up)) {
+            if(paddle2.getOrigin().y > 0) {
+                paddle2.move(0, -1);
             }
             
         }
         //Down arrow key
-        if(event.type == Event::KeyPressed && event.key.code == Keyboard::Down) {
-            float height = paddle2Spr.getScale().y*paddle2.Height;
-            if(paddle2.Y+height+height < 600) {
-                paddle2.Y++;
+        if(Keyboard::isKeyPressed(Keyboard::Key::Down)) {
+            float height = paddle2Spr.getScale().y*paddle2.height;
+            if(paddle2.getOrigin().y+height+height < 600) {
+                paddle2.move(0, 1);
             }
         }
         
         
         /* PLAYER 1 */
         //Up arrow key
-        if(event.type == Event::KeyPressed && event.key.code == Keyboard::W) {
-            if(paddle1.Y > 0) {
-                paddle1.Y--;
+        if(Keyboard::isKeyPressed(Keyboard::Key::W)) {
+            if(paddle1.getOrigin().y > 0) {
+                paddle1.move(0, -1);
             }
         }
         //Down arrow key
-        if(event.type == Event::KeyPressed && event.key.code == Keyboard::S) {
-            float height = paddle1Spr.getScale().y*paddle1.Height;
-            if(paddle1.Y+height+height < 600) {
-                paddle1.Y++;
+        if(Keyboard::isKeyPressed(Keyboard::Key::S)) {
+            float height = paddle1Spr.getScale().y*paddle1.height;
+            if(paddle1.getOrigin().y+height+height < 600) {
+                paddle1.move(0, 1);
             }
         }
+        
     }
     
+    void ballLogic() {
+        ball.move();
+        
+        //If the ball hits the paddles
+        if(paddle2.hits(ball)) {
+            ball.setDirection(ball.getDirection() - ((ball.getDirection() - 270) * 2));
+            ball.move();
+        }
+        if(paddle1.hits(ball)) {
+            ball.setDirection(ball.getDirection() - ((ball.getDirection() - 270) * 2));
+            ball.move();
+        }
+        
+        //Top boundary
+        if(ball.getY() <= 0) {
+            ball.setDirection((360 - ball.getDirection()));
+        }
+        //Bottom Boundary
+        if(ball.getY() >= 600) {
+            ball.setDirection((360 - (ball.getDirection()*ball.getDirection()) ));
+        }
+    }
     
 public:
     
@@ -76,29 +110,18 @@ public:
     
     
     GameScreen() {
-        paddle1.X = 40;
-        paddle1.Y = 40;
-        paddle1.Width = 2;
-        paddle1.Height = 5;
+        paddle1.setPosition(Point(35,40));
+        paddle1.width = 2;
+        paddle1.height = 5;
         
-        paddle2.X = 750;
-        paddle2.Y = 40;
-        paddle2.Width = 2;
-        paddle2.Height = 5;
+        paddle2.setPosition(Point(745,40));
+        paddle2.width = 2;
+        paddle2.height = 5;
         
         ball.centerX = 400;
         ball.centerY = 300;
-        ball.radius = 40;
+        ball.radius = 1.5;
     }
-    
-    
-    /* Used for adding the key event handler to the game */
-    void addEventHandler(Event e) {
-        event = e;
-    }
-    
-    
-    
     
     /* Used for initializing necessary elements of the game. */
     void initialize() {
@@ -109,6 +132,8 @@ public:
         paddle1Spr.setTexture(whitepixel);
         paddle2Spr.setTexture(whitepixel);
         ballSpr.setTexture(whitepixel);
+        
+        
     }
     
     /* Used for updating the game every frame. */
@@ -117,24 +142,20 @@ public:
         //Look for key input
         KeyInput();
         
+        //Update the movement of the ball
+        ballLogic();
+        
         //Set the sprites' positions
-        paddle1Spr.setPosition(Vector2f(paddle1.X, paddle1.Y));
-        paddle2Spr.setPosition(Vector2f(paddle2.X, paddle2.Y));
+        paddle1Spr.setPosition(Vector2f(paddle1.getOrigin().x, paddle1.getOrigin().y));
+        paddle2Spr.setPosition(Vector2f(paddle2.getOrigin().x, paddle2.getOrigin().y));
         ballSpr.setPosition(Vector2f(ball.centerX, ball.centerY));
         
         //Scale the images
-        paddle1Spr.setScale(paddle1.Width, paddle1.Height);
-        paddle2Spr.setScale(paddle2.Width, paddle2.Height);
+        paddle1Spr.setScale(paddle1.width, paddle1.height);
+        paddle2Spr.setScale(paddle2.width, paddle2.height);
+        ballSpr.setScale(ball.radius, ball.radius);
         
-        
-        //Remove whatever is already there
-        entities.erase(entities.begin(), entities.end());
-        
-        //Add all of the sprites to the entities list
-        entities.push_back(paddle1Spr);
-        entities.push_back(paddle2Spr);
-        entities.push_back(ballSpr);
-        
+        repaint();
     }
     
 };
