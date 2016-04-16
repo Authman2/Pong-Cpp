@@ -21,6 +21,14 @@ class GameScreen {
     
 private:
     
+    bool gameStarted, gameEnded;
+    
+    sf::Clock AITimer;
+    const sf::Time AITime = sf::seconds(0.1f);
+    float ballAngle = 0.f;
+    sf::Clock clock;
+    
+    
     /* Used in a similar fashion to the way you would use it in java. */
     void repaint() {
         //Remove whatever is already there
@@ -33,62 +41,111 @@ private:
     }
     
     void KeyInput() {
+        //Start the game
+        if(Keyboard::isKeyPressed(Keyboard::Key::Space)) {
+            if(!gameStarted) {
+                gameStarted = true;
+                // Reset the ball angle
+                do
+                {
+                    // Make sure the ball initial angle is not too much vertical
+                    ballAngle = (std::rand() % 360) * 2 * 3.1415926 / 360;
+                }
+                while (std::abs(std::cos(ballAngle)) < 0.7f);
+            }
+        }
+        
+        if(gameStarted) {
+            /* PLAYER 2 */
+            //Up arrow key
+            if(Keyboard::isKeyPressed(Keyboard::Key::Up)) {
+                if(paddle2.getOrigin().y > 0) {
+                    paddle2.move(0, -1);
+                }
+                
+            }
+            //Down arrow key
+            if(Keyboard::isKeyPressed(Keyboard::Key::Down)) {
+                float height = paddle2Spr.getScale().y*paddle2.height;
+                if(paddle2.getOrigin().y+height+height < 600) {
+                    paddle2.move(0, 1);
+                }
+            }
             
-        /* PLAYER 2 */
-        //Up arrow key
-        if(Keyboard::isKeyPressed(Keyboard::Key::Up)) {
-            if(paddle2.getOrigin().y > 0) {
-                paddle2.move(0, -1);
-            }
             
-        }
-        //Down arrow key
-        if(Keyboard::isKeyPressed(Keyboard::Key::Down)) {
-            float height = paddle2Spr.getScale().y*paddle2.height;
-            if(paddle2.getOrigin().y+height+height < 600) {
-                paddle2.move(0, 1);
+            /* PLAYER 1 */
+            //Up arrow key
+            if(Keyboard::isKeyPressed(Keyboard::Key::W)) {
+                if(paddle1.getOrigin().y > 0) {
+                    paddle1.move(0, -1);
+                }
+            }
+            //Down arrow key
+            if(Keyboard::isKeyPressed(Keyboard::Key::S)) {
+                float height = paddle1Spr.getScale().y*paddle1.height;
+                if(paddle1.getOrigin().y+height+height < 600) {
+                    paddle1.move(0, 1);
+                }
             }
         }
-        
-        
-        /* PLAYER 1 */
-        //Up arrow key
-        if(Keyboard::isKeyPressed(Keyboard::Key::W)) {
-            if(paddle1.getOrigin().y > 0) {
-                paddle1.move(0, -1);
-            }
-        }
-        //Down arrow key
-        if(Keyboard::isKeyPressed(Keyboard::Key::S)) {
-            float height = paddle1Spr.getScale().y*paddle1.height;
-            if(paddle1.getOrigin().y+height+height < 600) {
-                paddle1.move(0, 1);
-            }
-        }
-        
+    
     }
     
     void ballLogic() {
-        ball.move();
         
-        //If the ball hits the paddles
-        if(paddle2.hits(ball)) {
-            ball.setDirection(ball.getDirection() - ((ball.getDirection() - 270) * 2));
+        if(gameStarted) {
             ball.move();
-        }
-        if(paddle1.hits(ball)) {
-            ball.setDirection(ball.getDirection() - ((ball.getDirection() - 270) * 2));
-            ball.move();
+            // Check collisions between the ball and the screen
+            if (ball.centerX - ball.radius < 0.f)
+            {
+                gameStarted = false;
+            }
+            if (ball.centerX + ball.radius > 800)
+            {
+                gameStarted = false;
+            }
+            if (ball.centerY - ball.radius < 0.f)
+            {
+                ballAngle = -ballAngle;
+                ball.setPosition(ball.centerX, ball.radius + 0.1f);
+            }
+            if (ball.centerY + ball.radius > 600)
+            {
+                ballAngle = -ballAngle;
+                ball.setPosition(ball.centerX, 600 - ball.radius - 0.1f);
+                ball.move();
+            }
+            
+            // Check the collisions between the ball and the paddles
+            // Left Paddle
+            if (ball.centerX - ball.radius < paddle1.getOrigin().x + paddle1.width / 2 &&
+                ball.centerX - ball.radius > paddle1.getOrigin().x &&
+                ball.centerY + ball.radius >= paddle1.getOrigin().y - paddle1.width / 2 &&
+                ball.centerY - ball.radius <= paddle1.getOrigin().y + paddle1.width / 2)
+            {
+                if (ball.centerY > paddle2.getOrigin().y)
+                    ballAngle = 3.1415926 - ballAngle + (std::rand() % 20) * 3.1415926 / 180;
+                else
+                    ballAngle = 3.1415926 - ballAngle - (std::rand() % 20) * 3.1415926 / 180;
+                
+                ball.setPosition(paddle1.getOrigin().x + ball.radius + paddle1.width / 2 + 0.1f, ball.centerY);
+            }
+            
+            // Right Paddle
+            if (ball.centerX - ball.radius > paddle2.getOrigin().x + paddle2.width / 2 &&
+                ball.centerX - ball.radius < paddle2.getOrigin().x &&
+                ball.centerY + ball.radius >= paddle2.getOrigin().y - paddle2.width / 2 &&
+                ball.centerY - ball.radius <= paddle2.getOrigin().y + paddle2.width / 2)
+            {
+                if (ball.centerY > paddle2.getOrigin().y)
+                    ballAngle = 3.1415926 - ballAngle + (std::rand() % 20) * 3.1415926 / 180;
+                else
+                    ballAngle = 3.1415926 - ballAngle - (std::rand() % 20) * 3.1415926 / 180;
+                
+                ball.setPosition(paddle2.getOrigin().x - ball.radius - paddle2.width / 2 - 0.1f, ball.centerY);
+            }
         }
         
-        //Top boundary
-        if(ball.getY() <= 0) {
-            ball.setDirection((360 - ball.getDirection()));
-        }
-        //Bottom Boundary
-        if(ball.getY() >= 600) {
-            ball.setDirection((360 - (ball.getDirection()*ball.getDirection()) ));
-        }
     }
     
 public:
@@ -133,7 +190,8 @@ public:
         paddle2Spr.setTexture(whitepixel);
         ballSpr.setTexture(whitepixel);
         
-        
+        ball.setDirection(random() % 360);
+        ball.setSpeed(2);
     }
     
     /* Used for updating the game every frame. */
